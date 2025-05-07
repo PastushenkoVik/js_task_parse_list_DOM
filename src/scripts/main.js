@@ -7,8 +7,7 @@ const sortList = (list) => {
   return [...list].sort((a, b) =>
     salaryToInt(a) === salaryToInt(b)
       ? b.innerText.localeCompare(a.innerText)
-      : salaryToInt(a) - salaryToInt(b),
-  );
+      : salaryToInt(a) - salaryToInt(b));
 };
 
 const getEmployees = (list) =>
