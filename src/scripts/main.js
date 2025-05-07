@@ -1,8 +1,8 @@
 'use strict';
 
 const sortList = (list) => {
-  const salaryToInt = (listItem) =>
-    listItem.getAttribute('data-salary').replace(/[$,]/g, '');
+  const salaryToInt = (listItem) => parseInt(
+    listItem.getAttribute('data-salary').replace(/[$,]/g, ''));
 
   return [...list]
     .sort((a, b) => b.innerText.localeCompare(a.innerText))
