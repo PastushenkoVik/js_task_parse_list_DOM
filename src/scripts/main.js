@@ -1,12 +1,14 @@
 'use strict';
 
 const sortList = (list) => {
-  const salaryToInt = (listItem) => parseInt(
-    listItem.getAttribute('data-salary').replace(/[$,]/g, ''));
+  const salaryToInt = (listItem) =>
+    parseInt(listItem.getAttribute('data-salary').replace(/[$,]/g, ''));
 
-  return [...list]
-    .sort((a, b) => b.innerText.localeCompare(a.innerText))
-    .sort((a, b) => salaryToInt(a) - salaryToInt(b));
+  return [...list].sort((a, b) =>
+    salaryToInt(a) === salaryToInt(b)
+      ? b.innerText.localeCompare(a.innerText)
+      : salaryToInt(a) - salaryToInt(b),
+  );
 };
 
 const getEmployees = (list) =>
